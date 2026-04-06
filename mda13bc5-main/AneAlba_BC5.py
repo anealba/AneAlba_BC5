@@ -29,6 +29,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from openai import OpenAI
 import json
+from pathlib import Path
 
 # ============================================================
 # CONSTANTES
@@ -197,7 +198,9 @@ La interpretación:
 #
 @st.cache_data
 def load_data():
-    df = pd.read_json("streaming_history.json")
+    base_dir = Path(__file__).resolve().parent
+    json_path = base_dir / "streaming_history.json"
+    df = pd.read_json(json_path)
 
     # Eliminar episodios/podcasts y registros sin canción
     df = df[df["master_metadata_track_name"].notna()].copy()
@@ -259,8 +262,9 @@ def load_data():
     df["album_name"] = df["master_metadata_album_album_name"]
 
     orden_meses = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    ]
 
     df["month_name_es"] = pd.Categorical(df["month_name_es"], categories=orden_meses, ordered=True)
 
