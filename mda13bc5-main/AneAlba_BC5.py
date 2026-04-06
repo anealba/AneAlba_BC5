@@ -6,8 +6,8 @@
 Nombre: Ane Alba
 Proyecto: Spotify Analytics Assistant
 
-URL Streamlit: https://TU-APP.streamlit.app
-URL GitHub: https://github.com/TU-REPO
+URL Streamlit: https://anealbabc5-4wappqgkjoxq967cj6tstn.streamlit.app/
+URL GitHub: https://github.com/anealba/AneAlba_BC5/tree/main/mda13bc5-main
 
 Descripción:
 Aplicación interactiva que permite analizar hábitos de escucha
